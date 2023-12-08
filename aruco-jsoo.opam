@@ -1,0 +1,19 @@
+opam-version: "2.0"
+name: "aruco-jsoo"
+version: "dev"
+license: "BSD"
+maintainer: "Guillaume Huysmans <ghuysmans99@gmail.com>"
+authors: [
+	"Juan Mellado"
+	"Damiano Falcioni"
+]
+homepage: "https://github.com/ghuysmans/aruco-jsoo/"
+bug-reports: "https://github.com/ghuysmans/aruco-jsoo/"
+dev-repo: "git+https://github.com/ghuysmans/aruco-jsoo/"
+build: [["dune" "build" "-p" name "-j" jobs]]
+depends: [
+  "dune"
+	"js_of_ocaml-ppx"
+	"brr"
+]
+synopsis: "Bindings for js-aruco2"

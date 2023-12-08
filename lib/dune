@@ -1,1 +1,6 @@
-(library (name aruco) (preprocess (pps js_of_ocaml-ppx)))
+(library
+ (name aruco) (public_name aruco-jsoo)
+ (preprocess (pps js_of_ocaml-ppx)))
+(install
+ (section lib)
+ (files ../js-aruco2/src/aruco.js ../js-aruco2/src/cv.js))
