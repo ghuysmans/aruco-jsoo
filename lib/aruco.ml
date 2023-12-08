@@ -28,10 +28,10 @@ class type config = object
 end
 *)
 
-let detector ?dict ?max_hamming_dist () =
+let detector ?(dict=aruco_mip_36h12) ?max_hamming_dist () =
   let ctor : (_ Js.t -> detector Js.t) Js.constr = ar##._Detector in
   new%js ctor (object%js
-    val dictionary_name = Js.Opt.option dict
+    val dictionary_name = Js.Opt.return dict
     val max_hamming_distance = Js.Opt.option max_hamming_dist
   end)
 
