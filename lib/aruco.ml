@@ -36,6 +36,8 @@ let detector ?(dict=aruco_mip_36h12) ?max_hamming_dist () =
   end)
 
 class type dictionary = object
+  method codeList : int Js.js_array Js.t Js.readonly_prop
+  method tau : int Js.readonly_prop
   method generateSVG : int -> Js.js_string Js.t Js.meth
 end
 
