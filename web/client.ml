@@ -44,5 +44,14 @@ let () =
               ~y:(float c.(0)##.y)
         )
       in
-      Brr.El.append_children (Brr.Document.body Brr.G.document) [C.Canvas.to_el c];
+      let pause = Brr.El.button [Brr.El.txt (Jstr.of_string "pause")] in
+      let toggle _ =
+        if M.El.paused vm then ignore (M.El.play vm)
+        else M.El.pause vm
+      in
+      ignore (Brr.Ev.(listen click) toggle (Brr.El.as_target pause));
+      Brr.El.append_children (Brr.Document.body Brr.G.document) [
+        pause;
+        C.Canvas.to_el c
+      ];
       ignore (Brr.G.request_animation_frame f)
