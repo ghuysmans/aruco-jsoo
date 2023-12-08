@@ -8,7 +8,7 @@ end
 class type marker = object
   method id : int Js.readonly_prop
   method corners : corner Js.t Js.js_array Js.t Js.readonly_prop
-  method hamming_distance : float Js.readonly_prop (* TODO check convention *)
+  method hamming_distance : int Js.readonly_prop
 end
 
 class type detector = object
